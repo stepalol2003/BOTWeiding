@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram bot Svadba (RSVP)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/svadbabot
+EnvironmentFile=/opt/svadbabot/.env
+ExecStart=/opt/svadbabot/venv/bin/python -u botyuli.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
